@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front End Development Task</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="heading">
+          <div class="span"></div>
+          <div class="name">Bundle & Save</div>
+          <div class="span"></div>
+        </div>
+        <div class="containt">
+          <div class="section">
+            <div class="first">
+              <div class="left">
+                <div>
+                  <input
+                    type="radio"
+                    name="radio"
+                    id="1"
+                    class="radio"
+                    onchange="style1(this)"
+                  />
+                </div>
+                <div class="left-content">
+                  <div class="text">1 Pair</div>
+                  <div class="price">DKK 195.00</div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="offer">
+                  <!-- <div class="bold-text">Most Popular</div> -->
+                  <div class="off">50% off</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="first">
+              <div class="left">
+                <div>
+                  <input
+                    type="radio"
+                    name="radio"
+                    id="2"
+                    class="radio"
+                    onchange="style1(this)"
+                  />
+                </div>
+                <div class="left-content">
+                  <div class="text">1 Pair</div>
+                  <div class="price">DKK 345.00</div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="offer">
+                  <div class="bold-text">Most Popular</div>
+                  <div class="off">40% OFF</div>
+                </div>
+              </div>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <td></td>
+                  <td>Size</td>
+                  <td>Colour</td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>$</option>
+                      <option value="#">$ 1</option>
+                      <option value="#">$ 2</option>
+                      <option value="#">$ 3</option>
+                      <option value="#">$ 4</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>Red</option>
+                      <option value="#">Black</option>
+                      <option value="#">white</option>
+                      <option value="#">Green</option>
+                      <option value="#">Orange</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#2</td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>$</option>
+                      <option value="#">$ 1</option>
+                      <option value="#">$ 2</option>
+                      <option value="#">$ 3</option>
+                      <option value="#">$ 4</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>Red</option>
+                      <option value="#">Black</option>
+                      <option value="#">white</option>
+                      <option value="#">Green</option>
+                      <option value="#">Orange</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="section">
+            <div class="first">
+              <div class="left">
+                <div>
+                  <input
+                    type="radio"
+                    name="radio"
+                    id="3"
+                    class="radio"
+                    onchange="style1(this)"
+                  />
+                </div>
+                <div class="left-content">
+                  <div class="text">3 Pair</div>
+                  <div class="price">DKK 528.00</div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="offer">
+                  <div class="off">60% OFF</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="second">
+          <div>
+            <h1>Free 2 Day Shipping</h1>
+          </div>
+          <div>Total : DKK 360.00</div>
+        </div>
+        <div class="btn">
+          <div class="btn-name">+ Add to Cart</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function chnageBorder() {}
+      let style1 = (e) => {
+        let radio = document.getElementsByName("radio");
+        for (let i = 0; i < radio.length; i++) {
+          console.log(radio[i].id == e.id);
+          if (radio[i].id == e.id) {
+            radio[i].parentNode.parentNode.parentNode.parentNode.style.border =
+              "1.9px solid #007f61";
+          } else {
+            radio[i].parentNode.parentNode.parentNode.parentNode.style.border =
+              "0.9px solid #c8c8c8";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
