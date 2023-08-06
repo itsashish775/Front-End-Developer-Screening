@@ -130,6 +130,9 @@ select option:hover{
   .container{
     padding: 150px 0;
   }
+  .section{
+    padding: 10px 10px;
+  }
 }
 @media screen and (max-width: 280px) {
   /* body {
@@ -143,5 +146,8 @@ select option:hover{
   }
   .container{
     padding: 150px 0;
+  }
+  .section{
+    padding: 10px 10px;
   }
 }
