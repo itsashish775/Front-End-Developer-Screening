@@ -29,7 +29,7 @@
                 </div>
                 <div class="left-content">
                   <div class="text">1 Pair</div>
-                  <div class="price">DKK 195.00</div>
+                  <div class="price">DKK <span>195.00</span></div>
                 </div>
               </div>
               <div class="right">
@@ -53,9 +53,12 @@
                   />
                 </div>
                 <div class="left-content">
-                  <div class="text">1 Pair</div>
-                  <div class="price">DKK 345.00</div>
+                  <div class="text">2 Pair</div>
+                  <div class="price">DKK <span>345.00</span></div>
                 </div>
+              </div>
+              <div class="middle">
+                <div>DKK 195.00</div>
               </div>
               <div class="right">
                 <div class="offer">
@@ -63,57 +66,6 @@
                   <div class="off">40% OFF</div>
                 </div>
               </div>
-            </div>
-            <div class="table">
-              <table>
-                <tr>
-                  <td></td>
-                  <td>Size</td>
-                  <td>Colour</td>
-                </tr>
-                <tr>
-                  <td>#1</td>
-                  <td>
-                    <select>
-                      <option value="#" disabled selected>$</option>
-                      <option value="#">$ 1</option>
-                      <option value="#">$ 2</option>
-                      <option value="#">$ 3</option>
-                      <option value="#">$ 4</option>
-                    </select>
-                  </td>
-                  <td>
-                    <select>
-                      <option value="#" disabled selected>Red</option>
-                      <option value="#">Black</option>
-                      <option value="#">white</option>
-                      <option value="#">Green</option>
-                      <option value="#">Orange</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#2</td>
-                  <td>
-                    <select>
-                      <option value="#" disabled selected>$</option>
-                      <option value="#">$ 1</option>
-                      <option value="#">$ 2</option>
-                      <option value="#">$ 3</option>
-                      <option value="#">$ 4</option>
-                    </select>
-                  </td>
-                  <td>
-                    <select>
-                      <option value="#" disabled selected>Red</option>
-                      <option value="#">Black</option>
-                      <option value="#">white</option>
-                      <option value="#">Green</option>
-                      <option value="#">Orange</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
             </div>
           </div>
           <div class="section">
@@ -130,7 +82,7 @@
                 </div>
                 <div class="left-content">
                   <div class="text">3 Pair</div>
-                  <div class="price">DKK 528.00</div>
+                  <div class="price">DKK <span>528.00</span></div>
                 </div>
               </div>
               <div class="right">
@@ -145,7 +97,7 @@
           <div>
             <h1>Free 2 Day Shipping</h1>
           </div>
-          <div>Total : DKK 360.00</div>
+          <div>Total : DKK <span id="total">360.00</span></div>
         </div>
         <div class="btn">
           <div class="btn-name">+ Add to Cart</div>
@@ -155,15 +107,66 @@
     <script>
       function chnageBorder() {}
       let style1 = (e) => {
+        // setting totla value
+        let total = document.getElementById("total");
+        total.innerHTML =
+          e.parentNode.parentNode.children[1].children[1].children[0].innerHTML;
         let radio = document.getElementsByName("radio");
+
+        //creating function to add dynamic multiple dropdown
+        function addData(n) {
+          let str = "";
+          for (let i = 0; i < n; i++) {
+            str += `<tr>
+                  <td>#${i + 1}</td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>$</option>
+                      <option value="#">$ S</option>
+                      <option value="#">$ M</option>
+                      <option value="#">$ L</option>
+                      <option value="#">$ XL</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option value="#" disabled selected>Red</option>
+                      <option value="#">Black</option>
+                      <option value="#">white</option>
+                      <option value="#">Green</option>
+                      <option value="#">Orange</option>
+                    </select>
+                  </td>
+                </tr>`;
+          }
+          return str;
+        }
         for (let i = 0; i < radio.length; i++) {
-          console.log(radio[i].id == e.id);
           if (radio[i].id == e.id) {
             radio[i].parentNode.parentNode.parentNode.parentNode.style.border =
-              "1.9px solid #007f61";
+              "1px solid #007f61";
+            let html = `<div class="table">
+              <table>
+                <tr>
+                  <td></td>
+                  <td>Size</td>
+                  <td>Colour</td>
+                </tr>
+                ${addData(e.id)}
+              </table>
+            </div>`;
+            let div = document.createElement("div");
+            div.innerHTML = html;
+            radio[i].parentNode.parentNode.parentNode.parentNode.appendChild(
+              div
+            );
           } else {
             radio[i].parentNode.parentNode.parentNode.parentNode.style.border =
               "0.9px solid #c8c8c8";
+            let node1 = radio[i].parentNode.parentNode.parentNode.parentNode;
+            if (node1.children.length > 1) {
+              node1.removeChild(node1.children[1]);
+            }
           }
         }
       };

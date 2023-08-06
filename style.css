@@ -81,6 +81,13 @@ select option:hover{
   font-size: 14px;
   line-height: 17px;
 }
+.middle div{
+  color: #9F9F9F;
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: line-through;
+
+}
 .second {
   display: flex;
   justify-content: space-between;
