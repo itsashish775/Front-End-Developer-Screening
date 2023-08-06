@@ -116,3 +116,32 @@ select option:hover{
   line-height: 17px;
   color: #007f61;
 }
+
+@media screen and (max-width: 450px) {
+  /* body {
+    background-color: #9faca7;
+  } */
+  .main{
+    width:300px
+  }
+  .span{
+    width: 85px;
+  }
+  .container{
+    padding: 150px 0;
+  }
+}
+@media screen and (max-width: 280px) {
+  /* body {
+    background-color: #eafff7;
+  } */
+  .main{
+    width:250px
+  }
+  .span{
+    width: 60px;
+  }
+  .container{
+    padding: 150px 0;
+  }
+}
