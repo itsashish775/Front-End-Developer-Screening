@@ -81,6 +81,9 @@ select option:hover{
   font-size: 14px;
   line-height: 17px;
 }
+.right{
+  text-align: right;
+}
 .middle div{
   color: #9F9F9F;
   margin-top: 10px;
